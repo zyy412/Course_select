@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>计算机学院网上选课系统后台管理</title>
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/static/admin/css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/static/admin/css/main.css"/>
+    <script type="text/javascript" src="__PUBLIC__/static/admin/js/libs/modernizr.min.js"></script>
+</head>
+<body>
+    {include file="Public/top" /}
+<div class="container clearfix">
+    {include file="Public/left" /}
+    <!--/sidebar-->
+    <div class="main-wrap">
+        <div class="crumb-wrap">
+            <div class="crumb-list"><i class="icon-font"></i><a href="{:url('Index/home')}">首页</a><span class="crumb-step">&gt;</span><a href="{:url('index')}">课程管理</a><span class="crumb-step">&gt;</span><span class="crumb-name">课程信息</span></div>
+        </div>
+        <div class="result-wrap">
+            <form action="studentlst" name="myform" id="myform" method="post">
+                    <div class="result-title">
+                            <div class="result-list">
+                                <a href="{:url('choose/export')}"><i class="icon-font"></i>导出为excel</a>
+                            </div>
+                        </div>
+                <div class="result-content">
+                    <table class="result-tab" width="100%">
+                        <tr>
+                            <th width="">#</th>
+                            <th width="">课程编号</th>
+                            <th width="">课程名称</th>
+                            <th width="">所属专业</th>
+                            <th width="">所属年级</th>
+                            <th width="">开课学期</th>
+                            <th width="">备注</th>
+                            <th width="">应选人数</th>
+                            <th width="">实选人数</th>
+                        </tr>
+                        {volist name="data" id="vo"}
+                        <tr>
+                            <td>{$key+1}</td>
+                            <td>{$vo.c_num}</td>
+                            <td >{$vo.c_name}</td>
+                            <td >{$vo.c_major}</td>
+                            <td >{$vo.c_grade}</td>
+                            <td >{$vo.c_semester}</td>
+                            <td >{$vo.c_remarks}</td>
+                            <td >{$vo.total}</td>
+                            <td >{$vo.choose}</td>
+                        </tr>
+                        {/volist}
+                    </table>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!--/main-->
+</div>
+</body>
+</html>

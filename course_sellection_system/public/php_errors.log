@@ -1,0 +1,27 @@
+[01-May-2018 18:41:59 PRC] PHP Parse error:  syntax error, unexpected '}' in D:\phpStudy\PHPTutorial\WWW\course_sellection_system\application\manage\controller\BatchExport.php on line 92
+[01-May-2018 18:42:06 PRC] PHP Parse error:  syntax error, unexpected '}' in D:\phpStudy\PHPTutorial\WWW\course_sellection_system\application\manage\controller\BatchExport.php on line 92
+[01-May-2018 18:42:45 PRC] PHP Parse error:  syntax error, unexpected '}' in D:\phpStudy\PHPTutorial\WWW\course_sellection_system\application\manage\controller\BatchExport.php on line 92
+[01-May-2018 18:42:52 PRC] PHP Parse error:  syntax error, unexpected '}' in D:\phpStudy\PHPTutorial\WWW\course_sellection_system\application\manage\controller\BatchExport.php on line 92
+[01-May-2018 18:43:00 PRC] PHP Parse error:  syntax error, unexpected '}' in D:\phpStudy\PHPTutorial\WWW\course_sellection_system\application\manage\controller\BatchExport.php on line 92
+[01-May-2018 18:43:18 PRC] PHP Parse error:  syntax error, unexpected '}' in D:\phpStudy\PHPTutorial\WWW\course_sellection_system\application\manage\controller\BatchExport.php on line 92
+[01-May-2018 18:44:09 PRC] PHP Warning:  Uncaught exception 'think\exception\ErrorException' with message 'require(D:\phpStudy\PHPTutorial\WWW\course_sellection_system\public/tools/phpexcel/exportCTlst.php): failed to open stream: No such file or directory' in D:\phpStudy\PHPTutorial\WWW\course_sellection_system\application\manage\controller\BatchExport.php:78
+Stack trace:
+#0 D:\phpStudy\PHPTutorial\WWW\course_sellection_system\application\manage\controller\BatchExport.php(78): think\Error::appError(2, 'require(D:\\phpS...', 'D:\\phpStudy\\PHP...', 78, Array)
+#1 D:\phpStudy\PHPTutorial\WWW\course_sellection_system\application\manage\controller\BatchExport.php(78): app\manage\controller\BatchExport::exportCTlst()
+#2 [internal function]: app\manage\controller\BatchExport->exportCTlst()
+#3 D:\phpStudy\PHPTutorial\WWW\course_sellection_system\thinkphp\library\think\App.php(343): ReflectionMethod->invokeArgs(Object(app\manage\controller\BatchExport), Array)
+#4 D:\phpStudy\PHPTutorial\WWW\course_sellection_system\thinkphp\library\think\App.php(595): think in D:\phpStudy\PHPTutorial\WWW\course_sellection_system\application\manage\controller\BatchExport.php on line 78
+[01-May-2018 18:44:09 PRC] PHP Fatal error:  app\manage\controller\BatchExport::exportCTlst(): Failed opening required 'D:\phpStudy\PHPTutorial\WWW\course_sellection_system\public/tools/phpexcel/exportCTlst.php' (include_path='.;C:\php\pear') in D:\phpStudy\PHPTutorial\WWW\course_sellection_system\application\manage\controller\BatchExport.php on line 78
+[01-May-2018 18:44:23 PRC] PHP Warning:  Uncaught exception 'think\exception\ErrorException' with message 'require(D:\phpStudy\PHPTutorial\WWW\course_sellection_system\public/tools/phpexcel/exportCTlst.php): failed to open stream: No such file or directory' in D:\phpStudy\PHPTutorial\WWW\course_sellection_system\application\manage\controller\BatchExport.php:78
+Stack trace:
+#0 D:\phpStudy\PHPTutorial\WWW\course_sellection_system\application\manage\controller\BatchExport.php(78): think\Error::appError(2, 'require(D:\\phpS...', 'D:\\phpStudy\\PHP...', 78, Array)
+#1 D:\phpStudy\PHPTutorial\WWW\course_sellection_system\application\manage\controller\BatchExport.php(78): app\manage\controller\BatchExport::exportCTlst()
+#2 [internal function]: app\manage\controller\BatchExport->exportCTlst()
+#3 D:\phpStudy\PHPTutorial\WWW\course_sellection_system\thinkphp\library\think\App.php(343): ReflectionMethod->invokeArgs(Object(app\manage\controller\BatchExport), Array)
+#4 D:\phpStudy\PHPTutorial\WWW\course_sellection_system\thinkphp\library\think\App.php(595): think in D:\phpStudy\PHPTutorial\WWW\course_sellection_system\application\manage\controller\BatchExport.php on line 78
+[01-May-2018 18:44:23 PRC] PHP Fatal error:  app\manage\controller\BatchExport::exportCTlst(): Failed opening required 'D:\phpStudy\PHPTutorial\WWW\course_sellection_system\public/tools/phpexcel/exportCTlst.php' (include_path='.;C:\php\pear') in D:\phpStudy\PHPTutorial\WWW\course_sellection_system\application\manage\controller\BatchExport.php on line 78
+[02-May-2018 18:23:38 PRC] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting function (T_FUNCTION) in D:\phpStudy\PHPTutorial\WWW\course_sellection_system\application\manage\controller\Courseteacher.php on line 27
+[02-May-2018 18:23:41 PRC] PHP Parse error:  syntax error, unexpected 'else' (T_ELSE), expecting function (T_FUNCTION) in D:\phpStudy\PHPTutorial\WWW\course_sellection_system\application\manage\controller\Courseteacher.php on line 27
+[04-May-2018 08:00:26 Etc/GMT-8] PHP Fatal error:  Out of memory (allocated 262144) (tried to allocate 41 bytes) in D:\phpStudy\PHPTutorial\WWW\course_sellection_system\thinkphp\library\think\Loader.php on line 248
+[04-May-2018 08:04:11 Etc/GMT-8] PHP Fatal error:  Out of memory (allocated 262144) (tried to allocate 1792 bytes) in D:\phpStudy\PHPTutorial\WWW\course_sellection_system\thinkphp\library\think\Loader.php on line 330
+[04-May-2018 08:40:59 Etc/GMT-8] PHP Fatal error:  Out of memory (allocated 262144) (tried to allocate 24 bytes) in D:\phpStudy\PHPTutorial\WWW\course_sellection_system\thinkphp\library\think\Loader.php on line 329

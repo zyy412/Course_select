@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>后台管理</title>
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/static/admin/css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/static/admin/css/main.css"/>
+    <script type="text/javascript" src="__PUBLIC__/static/admin/js/libs/modernizr.min.js"></script>
+</head>
+<body>
+{include file="Public/top" /}
+<script language = "JavaScript">
+        cities = new Object();
+    
+    <?php 
+        foreach($info as $key=>$value){
+            ?>
+            cities['{$key}'] = new Array(
+            <?php 
+                foreach($info[$key] as $v){
+                    echo "'" .$v['name'] . "'" .',';
+                }
+                ?>
+            );
+            <?php
+        }
+    ?>
+    function set_city(province, city)
+    {
+        var pv, cv;
+        var i, ii;
+    
+        pv=province.value;
+        cv=city.value;
+    
+        city.length=1;
+    
+        if(pv=='0') return;
+        if(typeof(cities[pv])=='undefined') return;
+    
+        for(i=0; i<cities[pv].length; i++)
+        {
+           ii = i+1;
+           city.options[ii] = new Option();
+           city.options[ii].text = cities[pv][i];
+           city.options[ii].value = cities[pv][i];
+        }
+    
+    }
+    </script>
+<div class="container clearfix">
+    {include file="Public/left" /}
+    <!--/sidebar-->
+    <div class="main-wrap">
+
+        <div class="crumb-wrap">
+            <div class="crumb-list"><i class="icon-font"></i><a href="{:url('Index/home')}">首页</a><span class="crumb-step">&gt;</span><span>指定代课教师</span></div>
+        </div>
+        <div class="result-wrap">
+            <div class="result-content">
+                <form action="{:url('appoint/appoint',array('c_id'=>input('c_id')))}" method="post" id="myform" name="myform" enctype="multipart/form-data">
+                    <table class="insert-tab" width="100%">
+                        <tbody>
+                             <tr>
+                                    <th width="10%"><i class="require-red">*</i>所在系部：</th>
+                                 <td> 
+                                    <select class="common-text required" name="province" onChange="set_city(this, this.form.city);">
+                                        <option value="0">选择系部</option>
+                                        {foreach name="info" item="vo" key="k"}
+                                            <option value="{$k}">{$k}   </option>
+                                        {/foreach}
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                    <th width="10%"><i class="require-red">*</i>教师姓名：</th>
+                                <td>
+                                    <select class="common-text required"  name="city" id="citys">
+                                    <option value="0">选择教师</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                    <th></th>
+                                    <td>
+                                        <input class="btn btn-primary btn6 mr10" value="提交" type="submit">
+                                        <input class="btn btn6" onclick="history.go(-2)" value="返回" type="button">
+                                    </td>
+                                </tr>
+                        </tbody></table>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <!--/main-->
+</div>
+
+</body>
+</html>

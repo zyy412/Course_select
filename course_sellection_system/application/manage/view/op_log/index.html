@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>计算机学院网上选课系统后台管理</title>
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/static/admin/css/common.css" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/static/admin/css/main.css" />
+    <script type="text/javascript" src="__PUBLIC__/static/admin/js/libs/modernizr.min.js"></script>
+</head>
+
+<body>
+    {include file="Public/top" /}
+    <div class="container clearfix">
+        {include file="Public/left" /}
+        <!--/sidebar-->
+        <div class="main-wrap">
+            <div class="crumb-wrap">
+                <div class="crumb-list"><i class="icon-font"></i><a href="{:url('Index/home')}">首页</a>
+            </div>
+            <div class="result-wrap">
+                <form name="myform" id="myform" method="post">
+                    <div class="result-title">
+                        <div class="result-list">
+                            <a href="{:url('OpLog/admin_op_log')}"><i class="icon-font">&#xe051;</i>管理员操作日志</a>
+                            <a href="{:url('OpLog/op_log')}"><i class="icon-font">&#xe051;</i>学生操作日志</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!--/main-->
+    </div>
+</body>
+
+</html>

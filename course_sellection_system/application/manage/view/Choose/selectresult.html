@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>计算机学院网上选课系统后台管理</title>
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/static/admin/css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/static/admin/css/main.css"/>
+    <script type="text/javascript" src="__PUBLIC__/static/admin/js/libs/modernizr.min.js"></script>
+</head>
+<body>
+    {include file="Public/top" /}
+<div class="container clearfix">
+    {include file="Public/left" /}
+    <!--/sidebar-->
+    <div class="main-wrap">
+
+        <div class="crumb-wrap">
+            <div class="crumb-list"><i class="icon-font"></i><a href="{:url('Index/home')}">首页</a><span class="crumb-step">&gt;</span><a class="crumb-name" href="{:url('index')}">选课管理</a><span class="crumb-step">&gt;</span><span>通过学号查找</span></div>
+        </div>
+        <div class="result-wrap">
+            <form name="myform" id="myform" method="post">
+                <div class="result-content">
+                    <table class="result-tab" width="100%">
+                        <tr>
+                            <th>学号</th>
+                            <th>课程id</th>
+                            <th>课程号</th>
+                            <th>课程名称</th>
+                            <th>开课学期</th>
+                            <th>课程性质</th>
+                            <th>学生选择状态</th>
+                            <th>操作</th>
+                        </tr>
+                        {volist name="data" id="vo"}
+                        <tr>
+                            <td>{$student}</td>
+                            <td>{$vo.c_id}</td>
+                            <td>{$vo.c_num}</td>
+                            <td>{$vo.c_name}</td>
+                            <td>{$vo.semester}</td>
+                            {if $vo.all==1}<td>整班选课</td>{/if}
+                            {if $vo.all==0}<td>自选课</td>{/if}
+                            {if $vo.status==1}<td>已选</td>{/if}
+                            {if $vo.status==0}<td>未选</td>{/if}
+                            {if $vo.status==1}
+                                <td><a onclick="return confirm('你确定要退选该学生的课程吗？');" href="{:url('unselect',array('c_id'=>$vo.c_id,'s_num'=>$student,'table'=>$table))}">退选</a></td>
+                            {/if}
+                            {if $vo.status==0}
+                                <td><a onclick="return confirm('你确定要选择该学生的课程吗？');" href="{:url('select_action',array('c_id'=>$vo.c_id,'s_num'=>$student,'table'=>$table))}">选择</a></td>
+                            {/if}
+                        </tr>
+                        {/volist}
+                    </table>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!--/main-->
+</div>
+</body>
+</html>
